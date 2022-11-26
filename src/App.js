@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Hot100 from "./components/Hot100";
+import { Route, Routes} from "react-router-dom";
+import Global from "./components/Global";
+import Album from "./components/Album";
+import Artist from "./components/Artist";
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
+import { Footer } from "./components/Footer";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<Home/>} />
+      <Route path="/hot100" element={<Hot100/>} />
+      <Route path="/global200" element={<Global/>} />
+      <Route path="/album200" element={<Album/>} />
+      <Route path="/artist100" element={<Artist/>} />
+    </Routes>
+    <Footer/>
+    </>
   );
 }
 
